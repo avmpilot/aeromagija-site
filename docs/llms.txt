@@ -1,0 +1,24 @@
+# Aeromagija (UAB Budivnika)
+
+> Lithuanian developer of aviation systems and technology. We design aircraft, build them in our own ~1,000 m² workshop near Vilnius, flight-test them and write the software that flies them. Main focus: personal air mobility ("3D mobility") — living 100+ km from a city and flying to work in under an hour.
+
+## Products
+- **Binom1** — single-seat hybrid light aircraft (STOL). Nose propeller driven by a petrol engine; two electric pusher motors on a short canard blow the main wing for take-off and landing (lift coefficient 3.5–4.2), then fold in cruise. Take-off/landing 40–60 m, stall 45 km/h, cruise 170 km/h, max 220 km/h, range ≈600 km / 5 h (calculated). Taildragger. Electric motors are an independent back-up power system. Status: tooling in production, prototype next.
+- **NERINGA** — own three-level flight controller: control algorithms + AI agent that advises the pilot, helps in hard phases (approach, flare, touchdown) or flies the whole flight. Runs on STM32. Ground station: Houston. Low-level layer complete Nov 2026; first flight on board Dec 2026 – Jan 2027. Planned: cameras, terrain-following radar, and magnetic-anomaly navigation as a coarse fix that narrows the image-matching search when GPS is lost, jammed or spoofed.
+- **AD-27 "ALPINK"** — long-endurance fixed-wing UAV, catapult or wheel launch, take-off mass 32 kg, payload 3–12.5 kg, cruise 88 km/h, calculated endurance up to 12 h 45 min, range 1,120 km. Uses: forests and wildfire, agriculture, power lines, railways, search and rescue. 21 test flights in 2026. Test bed for NERINGA.
+
+## Airpark concept
+Airpark villages with a 100–150 m grass strip, 100+ km from city centres: 9–16× more area within 45 minutes of the centre; example — 110 km from Vilnius in about 45 minutes by Binom1.
+
+## Team
+- Alexander Murakhovsky — founder & CEO, military pilot and aviation engineer, test pilot.
+- Dmytro Zinchenko, PhD — aerodynamics & certification (30+ years at Antonov).
+- Oleg Bourdo — systems & software (NERINGA).
+
+## History
+XiAT-650 agricultural aircraft (2012) → City Fly personal aircraft prototype (2018) → AD-27 UAV (2024) → Binom1 (2025) → NERINGA & Houston (2026).
+
+## Contact
+- Site: https://aeromagija.com/ (EN), https://aeromagija.com/lt/ (LT)
+- Email: avmpilot@gmail.com
+- Investors: pitch deck, business plan and financial model on request.

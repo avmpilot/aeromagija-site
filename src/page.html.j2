@@ -1,0 +1,322 @@
+{%- macro img(name, alt, cap='', w=800, h=450, sizes='100vw', cls='plate develop', big=1600) -%}
+<figure class="{{ cls }}">
+  <div class="frame"><img src="{{ t.root }}assets/img/{{ name }}-800.webp" srcset="{{ t.root }}assets/img/{{ name }}-800.webp 800w, {{ t.root }}assets/img/{{ name }}-{{ big }}.webp {{ big }}w" sizes="{{ sizes }}" width="{{ w }}" height="{{ h }}" alt="{{ alt }}" loading="lazy" decoding="async"></div>
+  {% if cap %}<figcaption>{{ cap }}</figcaption>{% endif %}
+</figure>
+{%- endmacro -%}
+<!doctype html>
+<html lang="{{ t.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ t.title }}</title>
+<meta name="description" content="{{ t.description }}">
+<meta name="theme-color" content="#1a2022">
+<link rel="canonical" href="https://aeromagija.com/{{ '' if t.lang == 'en' else 'lt/' }}">
+<link rel="alternate" hreflang="en" href="https://aeromagija.com/">
+<link rel="alternate" hreflang="lt" href="https://aeromagija.com/lt/">
+<link rel="alternate" hreflang="x-default" href="https://aeromagija.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ t.title }}">
+<meta property="og:description" content="{{ t.description }}">
+<meta property="og:image" content="https://aeromagija.com/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://aeromagija.com/{{ '' if t.lang == 'en' else 'lt/' }}">
+<meta property="og:site_name" content="Aeromagija">
+<meta property="og:locale" content="{{ 'en_GB' if t.lang == 'en' else 'lt_LT' }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{ t.root }}favicon.svg" type="image/svg+xml">
+<link rel="preload" href="{{ t.root }}assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ t.root }}assets/site.css?v={{ v }}">
+<script type="application/ld+json">{{ {"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://aeromagija.com/#org","name":"UAB Budivnika","alternateName":"Aeromagija","brand":{"@type":"Brand","name":"Aeromagija"},"identifier":code,"url":"https://aeromagija.com/","logo":"https://aeromagija.com/favicon.svg","email":mail,"telephone":phone_href,"address":{"@type":"PostalAddress","addressLocality":"Vilnius region","addressCountry":"LT"},"founder":{"@type":"Person","name":"Alexander Murakhovsky"},"description":t.description,"knowsAbout":["light aircraft","hybrid aircraft","STOL","personal air mobility","unmanned aerial vehicles","flight control software","autopilot","GPS-denied navigation"],"sameAs":[fb]},
+ {"@type":"Product","name":"Binom1","category":"Hybrid light aircraft","brand":{"@id":"https://aeromagija.com/#org"},"manufacturer":{"@id":"https://aeromagija.com/#org"},"description":t.faq[0][1],"image":"https://aeromagija.com/assets/img/exp-binom-1200.webp"},
+ {"@type":"Product","name":"AD-27","category":"Unmanned aerial vehicle","brand":{"@id":"https://aeromagija.com/#org"},"manufacturer":{"@id":"https://aeromagija.com/#org"},"description":t.faq[6][1],"image":"https://aeromagija.com/assets/img/exp-ad27-1200.webp"},
+ {"@type":"SoftwareApplication","name":"NERINGA","applicationCategory":"Flight control software","creator":{"@id":"https://aeromagija.com/#org"},"description":t.faq[5][1]},
+ {"@type":"FAQPage","mainEntity":[]}
+]} | faq_ld(t.faq) | tojson }}</script>
+</head>
+<body>
+<a class="skip" href="#main">{{ t.skip }}</a>
+
+<header class="rail">
+  <a class="mark" href="{{ t.root or './' }}" aria-label="Aeromagija">AEROMAGIJA</a>
+  <nav aria-label="{{ t.nav_label }}">
+    <ul>
+      <li><a href="#binom">{{ t.nav_binom }}</a></li>
+      <li><a href="#neringa">{{ t.nav_neringa }}</a></li>
+      <li><a href="#ad27">{{ t.nav_ad27 }}</a></li>
+      <li><a href="#experience">{{ t.nav_bureau }}</a></li>
+      <li><a href="#contact">{{ t.nav_contact }}</a></li>
+    </ul>
+  </nav>
+  <div class="lang" role="group" aria-label="{{ t.lang_label }}">
+    <span aria-current="true">{{ t.self_label }}</span>
+    <a href="{{ t.other_href }}" hreflang="{{ t.other_lang }}" lang="{{ t.other_lang }}">{{ t.other_label }}</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="tunnel" aria-labelledby="h1">
+  <canvas class="tunnel__flow" aria-hidden="true"></canvas>
+  <div class="tunnel__copy">
+    <h1 id="h1">{{ t.h1 }}</h1>
+    <p class="lede">{{ t.lede }}</p>
+    <div class="actions">
+      <a class="btn" href="#film">{{ t.cta2 }}<svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
+      <a class="link" href="#contact">{{ t.cta }}</a>
+    </div>
+  </div>
+  <figure class="tunnel__media">
+    <div class="frame frame--video">
+      <video autoplay muted loop playsinline preload="metadata" poster="{{ t.root }}assets/video/launch-poster.webp" aria-label="{{ t.video_label }}">
+        <source src="{{ t.root }}assets/video/launch.webm" type="video/webm">
+        <source src="{{ t.root }}assets/video/launch.mp4" type="video/mp4">
+      </video>
+    </div>
+    <figcaption>{{ t.video_cap }}</figcaption>
+  </figure>
+  <ol class="readout" aria-label="{{ t.chain_h }}">
+    <li><b>{{ t.ch1h }}</b><span>{{ t.ch1p }}</span></li>
+    <li><b>{{ t.ch2h }}</b><span>{{ t.ch2p }}</span></li>
+    <li><b>{{ t.ch3h }}</b><span>{{ t.ch3p }}</span></li>
+    <li><b>{{ t.ch4h }}</b><span>{{ t.ch4p }}</span></li>
+    <li><b>{{ t.ch5h }}</b><span>{{ t.ch5p }}</span></li>
+  </ol>
+</section>
+
+<article id="binom" class="article" aria-labelledby="h-binom">
+  <header class="article__head">
+    <p class="tag"><span class="tag__name">{{ t.b_tag }}</span><span class="status"><i aria-hidden="true"></i>{{ t.b_status }}</span></p>
+    <h2 id="h-binom">{{ t.b_h }}</h2>
+    <p class="body">{{ t.b_p }}</p>
+  </header>
+  <div class="article__body">
+    {{ img('binom-cad', t.b_climb_alt, t.b_climb_cap, 1600, 960, '(min-width: 64rem) 55vw, 100vw', 'plate', 1600) }}
+    <dl class="innov">
+      <div><dt>{{ t.b_i1h }}</dt><dd>{{ t.b_i1p }}</dd></div>
+      <div><dt>{{ t.b_i2h }}</dt><dd>{{ t.b_i2p }}</dd></div>
+      <div><dt>{{ t.b_i3h }}</dt><dd>{{ t.b_i3p }}</dd></div>
+      <div><dt>{{ t.b_i4h }}</dt><dd>{{ t.b_i4p }}</dd></div>
+    </dl>
+    <h3 class="minor">{{ t.v_h }}</h3>
+    <dl class="vs">
+      <div><dt>{{ t.v1h }}</dt><dd>{{ t.v1p }}</dd></div>
+      <div class="vs--us"><dt>{{ t.v2h }}</dt><dd>{{ t.v2p }}</dd></div>
+    </dl>
+    <div class="smoke-pair">
+      <figure class="plate plate--smoke">
+        <div class="frame"><img src="{{ t.root }}assets/img/binom-flap-smoke.webp" width="607" height="417" alt="{{ t.b_flap_alt }}" loading="lazy" decoding="async"></div>
+        <figcaption>{{ t.b_flap_cap }}</figcaption>
+      </figure>
+      <figure class="plate plate--smoke">
+        <div class="frame"><img src="{{ t.root }}assets/img/binom-smoke-800.webp" srcset="{{ t.root }}assets/img/binom-smoke-800.webp 800w, {{ t.root }}assets/img/binom-smoke-1600.webp 1092w" sizes="(min-width: 64rem) 30vw, 100vw" width="1092" height="499" alt="{{ t.b_flow_alt }}" loading="lazy" decoding="async"></div>
+        <figcaption>{{ t.b_flow_cap }}</figcaption>
+      </figure>
+    </div>
+    <dl class="spec">
+      <div><dt>{{ t.b_k1 }}</dt><dd>{{ t.b_v1 }}</dd></div>
+      <div><dt>{{ t.b_k2 }}</dt><dd>{{ t.b_v2 }}</dd></div>
+      <div><dt>{{ t.b_k3 }}</dt><dd>{{ t.b_v3 }}</dd></div>
+      <div><dt>{{ t.b_k4 }}</dt><dd>{{ t.b_v4 }}</dd></div>
+      <div><dt>{{ t.b_k5 }}</dt><dd>{{ t.b_v5 }}</dd></div>
+      <div><dt>{{ t.b_k6 }}</dt><dd>{{ t.b_v6 }}</dd></div>
+    </dl>
+    <p class="fine">{{ t.b_note }}</p>
+  </div>
+</article>
+
+<section id="film" class="film" aria-labelledby="h-film">
+  <div class="film__head">
+    <h2 id="h-film">{{ t.f_h }}</h2>
+    <p>{{ t.f_p }}</p>
+  </div>
+  <figure class="film__stage">
+    <div class="frame frame--film">
+      <video muted loop playsinline preload="none" poster="{{ t.root }}assets/video/journey-poster.webp" aria-label="{{ t.f_alt }}" data-autoplay>
+        <source src="{{ t.root }}assets/video/journey.webm" type="video/webm">
+        <source src="{{ t.root }}assets/video/journey.mp4" type="video/mp4">
+      </video>
+    </div>
+    <ul class="stats">{% for v,l in t.st1 %}<li><b>{{ v }}</b> {{ l }}</li>{% endfor %}</ul>
+  </figure>
+  <figure class="film__stage film__stage--vilnius">
+    <div class="frame frame--film">
+      <video muted loop playsinline preload="none" poster="{{ t.root }}assets/video/vilnius-poster.webp" aria-label="{{ t.v_alt }}" data-autoplay>
+        <source src="{{ t.root }}assets/video/vilnius.webm" type="video/webm">
+        <source src="{{ t.root }}assets/video/vilnius.mp4" type="video/mp4">
+      </video>
+    </div>
+    <ul class="stats">{% for v,l in t.st2 %}<li><b>{{ v }}</b> {{ l }}</li>{% endfor %}</ul>
+    <p class="cgi">{{ t.cgi }}</p>
+  </figure>
+  <div class="dev">
+    <h3 class="minor">{{ t.d_h }}</h3>
+    <dl>
+      <div><dt>{{ t.d1v }}</dt><dd>{{ t.d1p }}</dd></div>
+      <div><dt>{{ t.d2v }}</dt><dd>{{ t.d2p }}</dd></div>
+      <div><dt>{{ t.d3v }}</dt><dd>{{ t.d3p }}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<article id="neringa" class="article" aria-labelledby="h-neringa">
+  <header class="article__head">
+    <p class="tag"><span class="tag__name">{{ t.n_tag }}</span><span class="status"><i aria-hidden="true"></i>{{ t.n_status }}</span></p>
+    <h2 id="h-neringa">{{ t.n_h }}</h2>
+    <p class="body">{{ t.n_p }}</p>
+  </header>
+  <div class="article__body">
+    <figure class="plate">
+      <div class="frame frame--video">
+        <video muted loop playsinline preload="none" poster="{{ t.root }}assets/video/onboard-poster.webp" aria-label="{{ t.n_vid_label }}" data-autoplay>
+          <source src="{{ t.root }}assets/video/onboard.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption>{{ t.n_vid_cap }}</figcaption>
+    </figure>
+    <figure class="plate plate--houston">
+      <div class="frame frame--houston">
+        <video muted loop playsinline preload="none" poster="{{ t.root }}assets/video/houston-poster.webp" aria-label="{{ t.h_vid_label }}" data-autoplay>
+          <source src="{{ t.root }}assets/video/houston.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption>{{ t.h_vid_cap }}</figcaption>
+    </figure>
+    <h3 class="minor">{{ t.n_stage_h }}</h3>
+    <ol class="stages">
+      <li><b>{{ t.n_s1h }}</b><span>{{ t.n_s1p }}</span></li>
+      <li><b>{{ t.n_s2h }}</b><span>{{ t.n_s2p }}</span></li>
+      <li><b>{{ t.n_s3h }}</b><span>{{ t.n_s3p }}</span></li>
+    </ol>
+    <h3 class="minor">{{ t.n_sense_h }}</h3>
+    <p class="sense-p">{{ t.n_sense_p }}</p>
+    <dl class="uses">
+      <div><dt>{{ t.n_se1h }}</dt><dd>{{ t.n_se1p }}</dd></div>
+      <div><dt>{{ t.n_se2h }}</dt><dd>{{ t.n_se2p }}</dd></div>
+      <div><dt>{{ t.n_se3h }}</dt><dd>{{ t.n_se3p }}</dd></div>
+    </dl>
+    <p class="goal">{{ t.n_goal }}</p>
+    <p class="now">{{ t.n_now }}</p>
+  </div>
+</article>
+
+<article id="ad27" class="article" aria-labelledby="h-ad27">
+  <header class="article__head">
+    <p class="tag"><span class="tag__name">{{ t.a_tag }}</span><span class="status"><i aria-hidden="true"></i>{{ t.a_status }}</span></p>
+    <h2 id="h-ad27">{{ t.a_h }}</h2>
+    <p class="body">{{ t.a_p }}</p>
+    <p class="proof">{{ t.a_proof }}</p>
+  </header>
+  <div class="article__body">
+    {{ img('field-flag', t.a_photo_alt, t.a_photo_cap, 800, 450, '(min-width: 64rem) 55vw, 100vw') }}
+    <h3 class="minor">{{ t.a_spec_h }}</h3>
+    <dl class="spec">
+      <div><dt>{{ t.a_k1 }}</dt><dd>{{ t.a_v1 }}</dd></div>
+      <div><dt>{{ t.a_k2 }}</dt><dd>{{ t.a_v2 }}</dd></div>
+      <div><dt>{{ t.a_k3 }}</dt><dd>{{ t.a_v3 }}</dd></div>
+      <div><dt>{{ t.a_k4 }}</dt><dd>{{ t.a_v4 }}</dd></div>
+      <div><dt>{{ t.a_k5 }}</dt><dd>{{ t.a_v5 }}</dd></div>
+      <div><dt>{{ t.a_k6 }}</dt><dd>{{ t.a_v6 }}</dd></div>
+      <div><dt>{{ t.a_k7 }}</dt><dd>{{ t.a_v7 }}</dd></div>
+      <div><dt>{{ t.a_k8 }}</dt><dd>{{ t.a_v8 }}</dd></div>
+    </dl>
+    <h3 class="minor">{{ t.a_uses_h }}</h3>
+    <dl class="uses">
+      <div><dt>{{ t.u1h }}</dt><dd>{{ t.u1p }}</dd></div>
+      <div><dt>{{ t.u2h }}</dt><dd>{{ t.u2p }}</dd></div>
+      <div><dt>{{ t.u3h }}</dt><dd>{{ t.u3p }}</dd></div>
+      <div><dt>{{ t.u4h }}</dt><dd>{{ t.u4p }}</dd></div>
+      <div><dt>{{ t.u5h }}</dt><dd>{{ t.u5p }}</dd></div>
+      <div><dt>{{ t.u6h }}</dt><dd>{{ t.u6p }}</dd></div>
+    </dl>
+    <h3 class="minor">{{ t.a_scan_h }}</h3>
+    <table class="scan">
+      <thead><tr><th scope="col">{{ t.a_scan_alt }}</th><th scope="col"><span class="sr">km²</span></th></tr></thead>
+      <tbody>
+      {% for h, a in scan %}<tr><th scope="row">{{ h }}</th><td><span class="bar" style="--w: {{ [133,333,665][loop.index0] / 665 }}"></span><span class="num">{{ a }}</span></td></tr>
+      {% endfor %}</tbody>
+    </table>
+    <p class="fine">{{ t.a_scan_note }}</p>
+  </div>
+</article>
+
+<section class="strip" aria-labelledby="h-strip">
+  <h3 id="h-strip" class="minor">{{ t.strip_h }}</h3>
+  <div class="strip__row">
+    {{ img('field-catapult', t.st1_alt, t.st1_cap, 800, 600, '(min-width: 64rem) 25vw, 80vw') }}
+    {{ img('field-crew', t.st2_alt, t.st2_cap, 800, 600, '(min-width: 64rem) 25vw, 80vw') }}
+    {{ img('catapult-dusk', t.st3_alt, t.st3_cap, 800, 450, '(min-width: 64rem) 25vw, 80vw') }}
+    {{ img('field-wide', t.st4_alt, t.st4_cap, 800, 600, '(min-width: 64rem) 25vw, 80vw') }}
+  </div>
+</section>
+
+<section id="experience" class="sec exp" aria-labelledby="h-exp">
+  <h2 id="h-exp">{{ t.e_h }}</h2>
+  <p class="exp__lede">{{ t.e_p }}</p>
+  <ol class="timeline">
+    <li>{{ img('exp-xiat', t.e1_alt, '', 800, 600, '(min-width: 64rem) 22vw, 80vw', 'plate develop', 1200) }}<p class="y">{{ t.e1y }}</p><h3>{{ t.e1n }}</h3><p>{{ t.e1p }}</p></li>
+    <li>{{ img('cityfly-proto', t.e2_alt, '', 1200, 900, '(min-width: 64rem) 22vw, 80vw', 'plate develop', 1200) }}<p class="y">{{ t.e2y }}</p><h3>{{ t.e2n }}</h3><p>{{ t.e2p }}</p></li>
+    <li>{{ img('exp-ad27', t.e3_alt, '', 800, 600, '(min-width: 64rem) 22vw, 80vw', 'plate develop', 1200) }}<p class="y">{{ t.e3y }}</p><h3>{{ t.e3n }}</h3><p>{{ t.e3p }}</p></li>
+    <li>{{ img('exp-binom', t.e4_alt, '', 800, 600, '(min-width: 64rem) 22vw, 80vw', 'plate develop', 1200) }}<p class="y">{{ t.e4y }}</p><h3>{{ t.e4n }}</h3><p>{{ t.e4p }}</p></li>
+  </ol>
+  <p class="exp__now"><span class="y">{{ t.e5y }}</span> <b>{{ t.e5n }}</b> — {{ t.e5p }}</p>
+  <div class="log">
+    <h3 class="minor">{{ t.log_h }}</h3>
+    <ol>
+      {% for y, n in log %}<li><span class="y">{{ y }}</span><span class="n">{{ n }}</span></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="sec bureau" aria-labelledby="h-team">
+  <h2 id="h-team">{{ t.t_h }}</h2>
+  <p class="bureau__lede">{{ t.t_p }}</p>
+  <ul class="team">
+    <li><h3>{{ t.t1n }}</h3><p class="role">{{ t.t1r }}</p><p>{{ t.t1p }}</p></li>
+    <li><h3>{{ t.t2n }}</h3><p class="role">{{ t.t2r }}</p><p>{{ t.t2p }}</p></li>
+    <li><h3>{{ t.t3n }}</h3><p class="role">{{ t.t3r }}</p><p>{{ t.t3p }}</p></li>
+  </ul>
+  <div class="shop">
+    {{ img('workshop-nose', t.w_alt3, t.w_cap, 800, 450, '(min-width: 64rem) 60vw, 100vw') }}
+  </div>
+</section>
+
+<section id="faq" class="faq" aria-labelledby="h-faq">
+  <h2 id="h-faq">{{ t.faq_h }}</h2>
+  <div class="faq__list">
+  {% for q,a in t.faq %}<details><summary>{{ q }}</summary><p>{{ a }}</p></details>
+  {% endfor %}</div>
+</section>
+<section id="contact" class="invest" aria-labelledby="h-contact">
+  <div class="invest__inner">
+    <h2 id="h-contact">{{ t.c_h }}</h2>
+    <dl class="coop">
+      <div><dt>{{ t.c1h }}</dt><dd>{{ t.c1p }}</dd></div>
+      <div><dt>{{ t.c2h }}</dt><dd>{{ t.c2p }}</dd></div>
+      <div><dt>{{ t.c3h }}</dt><dd>{{ t.c3p }}</dd></div>
+      <div><dt>{{ t.c4h }}</dt><dd>{{ t.c4p }}</dd></div>
+    </dl>
+    <p class="pitch">{{ t.i_pitch }}</p>
+    <p class="invest__visit">{{ t.i_visit }}</p>
+    <div class="actions">
+      <a class="btn btn--dark" href="mailto:{{ mail }}?subject={{ t.mail_subject | urlencode }}">{{ t.cta }}<svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
+      <a class="link" href="mailto:{{ mail }}?subject={{ t.deck_subject | urlencode }}">{{ t.i_deck }}</a>
+    </div>
+    <p class="contact"><a href="mailto:{{ mail }}">{{ mail }}</a><span aria-hidden="true">·</span><a href="tel:{{ phone_href }}">{{ t.i_call }} {{ phone }}</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p>{{ t.f_copy }} · <a href="mailto:{{ mail }}">{{ mail }}</a></p>
+</footer>
+
+<script src="{{ t.root }}assets/tunnel.js?v={{ v }}" defer></script>
+<script src="{{ t.root }}assets/film.js?v={{ v }}" defer></script>
+</body>
+</html>

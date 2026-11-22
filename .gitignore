@@ -1,0 +1,5 @@
+.claude/
+node_modules/
+.impeccable/review/
+.impeccable/mocks/
+__pycache__/
