@@ -306,14 +306,14 @@
       <a class="btn btn--dark" href="mailto:{{ mail }}?subject={{ t.mail_subject | urlencode }}">{{ t.cta }}<svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
       <a class="link" href="mailto:{{ mail }}?subject={{ t.deck_subject | urlencode }}">{{ t.i_deck }}</a>
     </div>
-    <p class="contact"><a href="mailto:{{ mail }}">{{ mail }}</a><span aria-hidden="true">·</span><a href="tel:{{ phone_href }}">{{ t.i_call }} {{ phone }}</a></p>
+    <p class="contact"><a href="mailto:{{ mail }}">{{ mail }}</a><span aria-hidden="true">·</span><a href="tel:{{ phone_href }}">{{ t.i_call }} {{ phone }}</a><span aria-hidden="true">·</span><a href="{{ fb }}" target="_blank" rel="noopener">Facebook</a></p>
   </div>
 </section>
 
 </main>
 
 <footer class="foot">
-  <p>{{ t.f_copy }} · <a href="mailto:{{ mail }}">{{ mail }}</a></p>
+  <p>{{ t.f_copy }} · <a href="mailto:{{ mail }}">{{ mail }}</a> · <a href="{{ fb }}" target="_blank" rel="noopener">Facebook</a></p>
 </footer>
 
 <script src="{{ t.root }}assets/tunnel.js?v={{ v }}" defer></script>
