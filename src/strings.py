@@ -144,7 +144,7 @@ EN = dict(
     n_se3h="Magnetic navigation", n_se3p="A rough position from the Earth's magnetic field, so visual navigation matches images only within that area, not the whole map. Published industry flight tests of magnetic navigation have shown accuracy within 550 m 64% of the time, and within 3.7 km at all times.",
     n_goal="The goal: you sit in the aircraft and work on a client presentation while it flies itself.",
     i_pitch="Investors: the pitch deck, business plan and financial model are available on request.",
-    v_alt="Film: a modern airpark village with a grass runway in the middle; a pilot walks to his Binom1 by the hangar and takes off; a map shows 25, 50 and 100 km rings around Vilnius and a 45-minute flight from the airpark 110 km out, while a car covers about a third of the way; Binom1 approaches along the Neris and the trip ends by e-scooter.",
+    v_alt="Film: Binom1 takes off from a grass strip among forests and lakes; a clock and a mini-map follow the 45-minute flight to Vilnius; the aircraft lands on the bank of the Neris by the city centre, and Justina continues by e-scooter.",
     faq_h="Questions and answers",
     faq=[
      ("What is Binom1?","A single-seat hybrid light aircraft from Lithuania for everyday personal air travel. A petrol engine drives the nose propeller; two electric motors on a short front wing blow air over the main wing for take-off and landing, then fold their propellers away in cruise."),
@@ -294,7 +294,7 @@ LT = dict(
     n_se3h="Magnetinė navigacija", n_se3p="Apytikslė padėtis pagal Žemės magnetinį lauką, kad vaizdinė navigacija lygintų vaizdus tik toje zonoje, o ne visame žemėlapyje. Paskelbti aviacijos pramonės magnetinės navigacijos skrydžių bandymai parodė tikslumą iki 550 m 64 % laiko ir iki 3,7 km – visą laiką.",
     n_goal="Tikslas: sėdite lėktuve ir ruošiate pristatymą klientui, o jis skrenda pats.",
     i_pitch="Investuotojams: pristatymą, verslo planą ir finansinį modelį pateikiame paprašius.",
-    v_alt="Filmas: modernus aeroparko kvartalas su žolės pakilimo taku viduryje; pilotas eina prie savo Binom1 prie angaro ir pakyla; žemėlapyje – 25, 50 ir 100 km spinduliai aplink Vilnių ir 45 minučių skrydis iš aeroparko už 110 km, o automobilis per tą laiką įveikia apie trečdalį kelio; Binom1 artėja palei Nerį, o kelionė baigiama paspirtuku.",
+    v_alt="Filmas: Binom1 pakyla nuo žolės juostos tarp miškų ir ežerų; laikrodis ir mini žemėlapis rodo 45 minučių skrydį į Vilnių; lėktuvas nusileidžia ant Neries kranto prie miesto centro, o Justina toliau važiuoja paspirtuku.",
     faq_h="Klausimai ir atsakymai",
     faq=[
      ("Kas yra Binom1?","Vienvietis hibridinis lengvasis lėktuvas iš Lietuvos kasdienėms asmeninėms kelionėms oru. Benzininis variklis suka priekinį propelerį; du elektriniai varikliai ant trumpo priekinio sparnelio pučia orą per pagrindinį sparną kylant ir tupiant, o kreiseriniame skrydyje jų propeleriai susilanksto."),
