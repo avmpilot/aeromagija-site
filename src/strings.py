@@ -17,7 +17,7 @@ EN = dict(
     nav_label="Main", lang_label="Language",
 
     h1="We develop aviation systems that make 3D mobility real.",
-    lede="Aeromagija designs aircraft, builds them in its own workshop near Vilnius, flight-tests them and writes the software that flies them. Binom1 and the NERINGA flight controller open personal air travel for everyday life; the AD-27 UAV already flies and proves the technology.",
+    lede="At Aeromagija, we design, assemble and flight-test our own aircraft at our manufacturing site near Vilnius, and we develop the flight software in-house. Our AD-27 UAV is already operational and is currently undergoing a flight-testing programme. Next to come is Binom1, our single-seat aircraft, together with NERINGA, our proprietary flight controller. Between them, they will bring safe private flying into everyday life.",
     cta="Contact", cta2="See how it works",
     mail_subject="Aeromagija — enquiry", deck_subject="Aeromagija — request for the investor deck",
     video_cap="AD-27 catapult launch · Valkininkai airfield, Lithuania",
@@ -167,7 +167,7 @@ LT = dict(
     nav_label="Pagrindinis meniu", lang_label="Kalba",
 
     h1="Kuriame aviacijos sistemas, kurios 3D mobilumą paverčia realybe.",
-    lede="Aeromagija projektuoja orlaivius, gamina juos savo dirbtuvėse prie Vilniaus, bando ore ir rašo juos skraidinančią programinę įrangą. Binom1 ir skrydžio valdiklis NERINGA atveria asmenines keliones oru kasdieniam gyvenimui; bepilotis AD-27 jau skraido ir įrodo technologiją.",
+    lede="Aeromagija pati projektuoja, surenka ir ore bando savo orlaivius savo gamybinėje bazėje prie Vilniaus, o skrydžio programinę įrangą kuria pati. Mūsų bepilotis AD-27 jau veikia ir šiuo metu vykdoma jo skrydžių bandymų programa. Toliau – vienvietis lėktuvas Binom1 kartu su mūsų nuosavu skrydžio valdikliu NERINGA. Kartu jie atneš saugius asmeninius skrydžius į kasdienį gyvenimą.",
     cta="Susisiekti", cta2="Kaip tai veikia",
     mail_subject="Aeromagija — užklausa", deck_subject="Aeromagija — investuotojų pristatymo užklausa",
     video_cap="AD-27 paleidimas katapulta · Valkininkų aerodromas, Lietuva",
